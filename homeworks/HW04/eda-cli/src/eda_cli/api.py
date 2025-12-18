@@ -254,14 +254,14 @@ async def quality_from_csv(file: UploadFile = File(...)) -> QualityResponse:
     )
 
 
-# ---------- /quality-from-csv: реальный CSV через нашу EDA-логику ----------
+# ---------- /quality-flags-from-csv: вывод флагов ----------
 
 
 @app.post(
     "/quality-flags-from-csv",
     response_model=QualityFlagsResponse,
     tags=["quality"],
-    summary="возвращает полный набор флагов качества",
+    summary="Возвращает полный набор флагов качества",
 )
 async def quality_flags_from_csv(file: UploadFile = File(...)) -> QualityFlagsResponse:
     """
