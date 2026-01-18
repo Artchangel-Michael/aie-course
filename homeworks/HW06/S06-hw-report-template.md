@@ -5,16 +5,16 @@
 
 ## 1. Dataset
 
-- Какой датасет выбран: `S06-hw-dataset-0X.csv`
-- Размер: (строк, столбцов)
-- Целевая переменная: `target` (классы и их доли)
-- Признаки: что за типы (числовые / категориальные-подобные, если есть)
+- Какой датасет выбран: `S06-hw-dataset-02.csv`
+- Размер: (18000 строк, 39 столбцоы)
+- Целевая переменная: `target`
+- Признаки: что за типы (числовые: дробные(float64) и целые int(64))
 
 ## 2. Protocol
 
 - Разбиение: train/test (доли, `random_state`)
-- Подбор: CV на train (сколько фолдов, что оптимизировали)
-- Метрики: accuracy, F1, ROC-AUC (и почему эти метрики уместны именно здесь)
+- Подбор: CV на train (5 фолдов, оптимизировал max_depth, min_samples_leaf)
+- Метрики: F1, ROC-AUC (F1 используется, когда классы сильно дисбалансны в бинарной классификации, ROC-AUC измеряет качество ранжирования объектов)
 
 ## 3. Models
 
@@ -24,24 +24,21 @@
 
 - DummyClassifier (baseline)
 - LogisticRegression (baseline из S05)
-- DecisionTreeClassifier (контроль сложности: `max_depth` + `min_samples_leaf` или `ccp_alpha`)
+- DecisionTreeClassifier (контроль сложности: `max_depth` + `min_samples_leaf`)
 - RandomForestClassifier
-- Один boosting (AdaBoost / GradientBoosting / HistGradientBoosting)
+- Один boosting (GradientBoosting)
 
-Опционально:
-
-- StackingClassifier (с CV-логикой)
 
 ## 4. Results
 
 - Таблица/список финальных метрик на test по всем моделям
-- Победитель (по ROC-AUC или по согласованному критерию) и краткое объяснение
+- Победитель (RandomForest, благодаря внутреннему разнообразию моделей) 
 
 ## 5. Analysis
 
-- Устойчивость: что будет, если поменять `random_state` (хотя бы 5 прогонов для 1-2 моделей) – кратко
-- Ошибки: confusion matrix для лучшей модели + комментарий
-- Интерпретация: permutation importance (top-10/15) + выводы
+- Устойчивость: что будет, если поменять `random_state` (одиночные деревья менее устойчивы к начальным условиям нежели леса) 
+- Ошибки: confusion matrix для лучшей модели (97% accuracy для класса 0, 65% accuracy для класса 1)
+- Интерпретация: permutation importance (top-10/15)
 
 ## 6. Conclusion
 
