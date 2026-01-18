@@ -1,0 +1,27 @@
+{
+  "LogReg": {
+    "best_params": {
+      "log_reg__C": 100
+    },
+    "best_cv_roc_auc": 0.8041495300132466
+  },
+  "DecTree": {
+    "best_params": {
+      "max_depth": 12,
+      "min_samples_leaf": 19
+    },
+    "best_cv_roc_auc": 0.8359969631991546
+  },
+  "RandFor": {
+    "best_params": {
+      "n_estimators": 300
+    },
+    "best_cv_roc_auc": 0.9291275468742685
+  },
+  "GradBoost": {
+    "best_params": {
+      "max_depth": 20
+    },
+    "best_cv_roc_auc": 0.9285796826836459
+  }
+}

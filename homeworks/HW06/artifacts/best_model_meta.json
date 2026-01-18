@@ -1,0 +1,16 @@
+{
+  "best_model_label": "RandFor",
+  "test_metrics": {
+    "accuracy": 0.8919444444444444,
+    "f1": 0.7600246761258482,
+    "roc_auc": 0.9286862164828267,
+    "model": "RandFor"
+  },
+  "search_summary": {
+    "best_params": {
+      "n_estimators": 300
+    },
+    "best_cv_roc_auc": 0.9291275468742685
+  },
+  "random_state": 42
+}
