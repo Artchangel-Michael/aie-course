@@ -55,3 +55,6 @@ logs/
 *.tmp
 *.bak
 *.old
+
+# Датасеты
+aie-course/HW08-09/data
